@@ -10,10 +10,11 @@ public class RenderReceipt {
         this.selectedItems = selectedItems;
     }
 
-    public String renderReceipt() {
+    public String getReceipt() {
         ParseInput parseInput = new ParseInput(selectedItems);
         OrderInfo orderInfo = parseInput.parseInputIntoOrderInfo();
         StringBuilder receipt = new StringBuilder("============= 订餐明细 =============");
+
         return receipt.toString();
     }
 }

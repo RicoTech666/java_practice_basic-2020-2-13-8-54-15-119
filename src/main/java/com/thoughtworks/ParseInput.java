@@ -1,7 +1,5 @@
 package com.thoughtworks;
 
-import sun.awt.image.ImageWatched;
-
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
