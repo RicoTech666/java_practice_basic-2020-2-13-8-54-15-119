@@ -10,11 +10,11 @@ public class OrderInfo {
     public OrderInfo() {
     }
 
-    public OrderInfo(Map<Dish, Integer> orderedDishes) {
+    OrderInfo(Map<Dish, Integer> orderedDishes) {
         this.orderedDishes = orderedDishes;
     }
 
-    public List<Integer> getEachTotalPrice() {
+    private List<Integer> getEachTotalPrice() {
         List<Integer> eachTotalPriceList = new ArrayList<>();
         for (Dish dish : orderedDishes.keySet()) {
             eachTotalPriceList.add((int) dish.getPrice() * orderedDishes.get(dish));
@@ -23,6 +23,16 @@ public class OrderInfo {
     }
 
     public int getTotalPrice() {
-        return (int) getEachTotalPrice().stream().reduce(Integer::sum).orElse(0);
+        return getEachTotalPrice().stream().reduce(Integer::sum).orElse(0);
+    }
+
+    public String getBasicInfo() {
+        StringBuilder basicInfo = new StringBuilder();
+
+        for (Dish dish : orderedDishes.keySet()) {
+            basicInfo.append(dish.getName()).append(" x ").append(orderedDishes.get(dish)).append(" = ")
+                    .append((int) dish.getPrice() * orderedDishes.get(dish)).append("\n");
+        }
+        return basicInfo.toString();
     }
 }

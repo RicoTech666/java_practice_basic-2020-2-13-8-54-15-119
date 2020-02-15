@@ -14,7 +14,6 @@ public class RenderReceipt {
         ParseInput parseInput = new ParseInput(selectedItems);
         OrderInfo orderInfo = parseInput.parseInputIntoOrderInfo();
         StringBuilder receipt = new StringBuilder("============= 订餐明细 =============");
-
         return receipt.toString();
     }
 }
