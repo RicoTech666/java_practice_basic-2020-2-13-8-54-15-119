@@ -63,7 +63,7 @@ public class OrderInfo {
 
         for (Dish dish : orderedDishes.keySet()) {
             basicInfo.append(dish.getName()).append(" x ").append(orderedDishes.get(dish)).append(" = ")
-                    .append((int) dish.getPrice() * orderedDishes.get(dish)).append("\n");
+                    .append((int) dish.getPrice() * orderedDishes.get(dish)).append("元").append("\n");
         }
         return basicInfo.toString();
     }

@@ -25,6 +25,7 @@ public class ZeroPricePromo implements Promotions {
 
     @Override
     public String getPromotionResult() {
-        return "总计：" + orderInfo.getTotalPrice() + "元\n" + "===================================";
+        return "-----------------------------------\n" + "总计：" + orderInfo.getTotalPrice() + "元\n" +
+                "===================================";
     }
 }

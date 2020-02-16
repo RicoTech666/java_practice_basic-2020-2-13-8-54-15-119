@@ -30,9 +30,11 @@ public class FixedPricePromo implements Promotions {
     public String getPromotionResult() {
         int finalPrice = orderInfo.getTotalPrice() - this.getPromotionPrice();
         StringBuilder promotionResult = new StringBuilder("-----------------------------------\n使用优惠:\n满");
-        promotionResult.append(promoThreshold).append("减").append(fixedPromoPrice).append("元，省").append(fixedPromoPrice).append("元");
-        promotionResult.append("-----------------------------------\n").append("总计：").append(finalPrice).append("元");
-        promotionResult.append("===================================\n");
+        promotionResult.append(promoThreshold).append("减").append(fixedPromoPrice).append("元，省")
+                .append(fixedPromoPrice).append("元\n");
+        promotionResult.append("-----------------------------------\n").append("总计：")
+                .append(finalPrice).append("元\n");
+        promotionResult.append("===================================");
         return promotionResult.toString();
     }
 }
