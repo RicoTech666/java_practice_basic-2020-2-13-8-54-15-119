@@ -26,6 +26,8 @@ public class HalfPricePromo implements Promotions {
 
     @Override
     public String getPromotionResult() {
-        return null;
+        StringBuilder promotionResult = new StringBuilder("-----------------------------------\n使用优惠:\n指定菜品半价(");
+        promotionResult.append(orderInfo.getHalfPromoName()).append(")，省").append(getPromotionPrice()).append("元");
+        return promotionResult.toString();
     }
 }

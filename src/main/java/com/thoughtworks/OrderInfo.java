@@ -44,6 +44,20 @@ public class OrderInfo {
         return halfPricePromoAmount;
     }
 
+    public String getHalfPromoName() {
+        List<String> halfPriceIds = DataProvider.getHalfDishIds();
+        StringBuilder halfPromoName = new StringBuilder();
+        for (Dish dish : orderedDishes.keySet()) {
+            String dishId = dish.getId();
+            for (String halfPriceId : halfPriceIds) {
+                if (dishId.equals(halfPriceId)) {
+                    halfPromoName.append(dish.getName()).append("，");
+                }
+            }
+        }
+        return halfPromoName.deleteCharAt(halfPromoName.length() - 1).toString();
+    }
+
     public String getBasicInfo() {
         StringBuilder basicInfo = new StringBuilder();
 

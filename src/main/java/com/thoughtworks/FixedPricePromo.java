@@ -28,8 +28,6 @@ public class FixedPricePromo implements Promotions {
 
     @Override
     public String getPromotionResult() {
-        return "-----------------------------------\n" +
-                "使用优惠:\n" +
-                "指定菜品半价(黄焖鸡，凉皮)，省13元";
+        return null;
     }
 }
