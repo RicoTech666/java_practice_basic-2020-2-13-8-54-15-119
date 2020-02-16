@@ -29,8 +29,8 @@ public class HalfPricePromo implements Promotions {
         int finalPrice = orderInfo.getTotalPrice() - this.getPromotionPrice();
         StringBuilder promotionResult = new StringBuilder("-----------------------------------\n使用优惠:\n指定菜品半价(");
         promotionResult.append(orderInfo.getHalfPromoName()).append(")，省").append(getPromotionPrice()).append("元\n");
-        promotionResult.append("-----------------------------------\n").append("总计：").append(finalPrice).append("元");
-        promotionResult.append("===================================\n");
+        promotionResult.append("-----------------------------------\n").append("总计：").append(finalPrice).append("元\n");
+        promotionResult.append("===================================");
         return promotionResult.toString();
     }
 }
