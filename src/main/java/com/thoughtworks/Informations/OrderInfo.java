@@ -1,4 +1,7 @@
-package com.thoughtworks;
+package com.thoughtworks.Informations;
+
+import com.thoughtworks.DataProvider;
+import com.thoughtworks.Dish;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +13,7 @@ public class OrderInfo {
     public OrderInfo() {
     }
 
-    OrderInfo(Map<Dish, Integer> orderedDishes) {
+    public OrderInfo(Map<Dish, Integer> orderedDishes) {
         this.orderedDishes = orderedDishes;
     }
 
@@ -22,11 +25,11 @@ public class OrderInfo {
         return eachTotalPriceList;
     }
 
-    int getTotalPrice() {
+    public int getTotalPrice() {
         return getEachTotalPrice().stream().reduce(Integer::sum).orElse(0);
     }
 
-    int getHalfPromoAmount() {
+    public int getHalfPromoAmount() {
         List<String> halfPriceIds = DataProvider.getHalfDishIds();
         int halfPricePromoAmount = 0;
         for (Dish dish : orderedDishes.keySet()) {
@@ -40,7 +43,7 @@ public class OrderInfo {
         return halfPricePromoAmount;
     }
 
-    String getHalfPromoName() {
+    public String getHalfPromoName() {
         List<String> halfPriceIds = DataProvider.getHalfDishIds();
         StringBuilder halfPromoName = new StringBuilder();
         for (Dish dish : orderedDishes.keySet()) {
@@ -54,7 +57,7 @@ public class OrderInfo {
         return halfPromoName.deleteCharAt(halfPromoName.length() - 1).toString();
     }
 
-    String getBasicInfo() {
+    public String getBasicInfo() {
         StringBuilder basicInfo = new StringBuilder();
 
         for (Dish dish : orderedDishes.keySet()) {

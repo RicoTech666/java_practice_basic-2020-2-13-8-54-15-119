@@ -1,5 +1,7 @@
 package com.thoughtworks;
 
+import com.thoughtworks.Informations.OrderInfo;
+import com.thoughtworks.Informations.PromoInfo;
 import com.thoughtworks.interfaces.Promotions;
 
 public class RenderReceipt {
@@ -17,8 +19,7 @@ public class RenderReceipt {
         OrderInfo orderInfo = parseInput.parseInputIntoOrderInfo();
         PromoInfo promoInfo = parseInput.passOrderInfoToPromoInfo();
         Promotions promotionType = promoInfo.getPromotionTypeFromPromoInfo();
-        String receipt = "============= 订餐明细 =============\n" + orderInfo.getBasicInfo() +
+        return "============= 订餐明细 =============\n" + orderInfo.getBasicInfo() +
                 promotionType.getPromotionResult();
-        return receipt;
     }
 }

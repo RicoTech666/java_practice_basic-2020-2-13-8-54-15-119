@@ -1,5 +1,6 @@
-package com.thoughtworks;
+package com.thoughtworks.Promotions;
 
+import com.thoughtworks.Informations.OrderInfo;
 import com.thoughtworks.interfaces.Promotions;
 
 public class HalfPricePromo implements Promotions {
@@ -7,7 +8,7 @@ public class HalfPricePromo implements Promotions {
     private final int fixedPromoPrice = 6;
     private final int promoThreshold = 30;
 
-    HalfPricePromo(OrderInfo orderInfo) {
+    public HalfPricePromo(OrderInfo orderInfo) {
         this.orderInfo = orderInfo;
     }
 

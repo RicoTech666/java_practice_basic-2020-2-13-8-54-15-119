@@ -1,5 +1,6 @@
-package com.thoughtworks;
+package com.thoughtworks.Promotions;
 
+import com.thoughtworks.Informations.OrderInfo;
 import com.thoughtworks.interfaces.Promotions;
 
 public class FixedPricePromo implements Promotions {
@@ -10,7 +11,7 @@ public class FixedPricePromo implements Promotions {
     public FixedPricePromo() {
     }
 
-    FixedPricePromo(OrderInfo orderInfo) {
+    public FixedPricePromo(OrderInfo orderInfo) {
         this.orderInfo = orderInfo;
     }
 

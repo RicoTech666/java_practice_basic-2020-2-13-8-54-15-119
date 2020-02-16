@@ -1,5 +1,8 @@
 package com.thoughtworks;
 
+import com.thoughtworks.Informations.OrderInfo;
+import com.thoughtworks.Informations.PromoInfo;
+
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;

@@ -1,5 +1,9 @@
-package com.thoughtworks;
+package com.thoughtworks.Informations;
 
+import com.thoughtworks.Informations.OrderInfo;
+import com.thoughtworks.Promotions.FixedPricePromo;
+import com.thoughtworks.Promotions.HalfPricePromo;
+import com.thoughtworks.Promotions.ZeroPricePromo;
 import com.thoughtworks.interfaces.Promotions;
 
 import java.util.ArrayList;
@@ -11,11 +15,11 @@ public class PromoInfo {
     public PromoInfo() {
     }
 
-    PromoInfo(OrderInfo orderInfo) {
+    public PromoInfo(OrderInfo orderInfo) {
         this.orderInfo = orderInfo;
     }
 
-    Promotions getPromotionTypeFromPromoInfo() {
+    public Promotions getPromotionTypeFromPromoInfo() {
         List<Promotions> promotions = new ArrayList<>();
         promotions.add(new FixedPricePromo(orderInfo));
         promotions.add(new HalfPricePromo(orderInfo));

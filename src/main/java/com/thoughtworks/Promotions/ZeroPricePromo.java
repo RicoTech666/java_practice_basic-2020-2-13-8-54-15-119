@@ -1,12 +1,13 @@
-package com.thoughtworks;
+package com.thoughtworks.Promotions;
 
+import com.thoughtworks.Informations.OrderInfo;
 import com.thoughtworks.interfaces.Promotions;
 
 public class ZeroPricePromo implements Promotions {
     private OrderInfo orderInfo;
     private final int promoThreshold = 30;
 
-    ZeroPricePromo(OrderInfo orderInfo) {
+    public ZeroPricePromo(OrderInfo orderInfo) {
         this.orderInfo = orderInfo;
     }
 
