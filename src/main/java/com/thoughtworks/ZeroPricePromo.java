@@ -4,10 +4,9 @@ import com.thoughtworks.interfaces.Promotions;
 
 public class ZeroPricePromo implements Promotions {
     private OrderInfo orderInfo;
-    private final int fixedPromoPrice = 6;
     private final int promoThreshold = 30;
 
-    public ZeroPricePromo(OrderInfo orderInfo) {
+    ZeroPricePromo(OrderInfo orderInfo) {
         this.orderInfo = orderInfo;
     }
 

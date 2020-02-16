@@ -1,19 +1,17 @@
 package com.thoughtworks;
 
-import com.thoughtworks.interfaces.Promotions;
-
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ParseInput {
+class ParseInput {
     private String input;
 
-    public ParseInput(String input) {
+    ParseInput(String input) {
         this.input = input;
     }
 
-    public OrderInfo parseInputIntoOrderInfo() {
+    OrderInfo parseInputIntoOrderInfo() {
         String[] selectedItemsArr = input.split(",");
         Map<String, Integer> inputMap = new LinkedHashMap<>();
         for (String element : selectedItemsArr) {
@@ -33,7 +31,7 @@ public class ParseInput {
         return new OrderInfo(orderedInfo);
     }
 
-    public PromoInfo passOrderInfoToPromoInfo() {
+    PromoInfo passOrderInfoToPromoInfo() {
         return new PromoInfo(parseInputIntoOrderInfo());
     }
 }

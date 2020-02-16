@@ -29,13 +29,10 @@ public class FixedPricePromo implements Promotions {
     @Override
     public String getPromotionResult() {
         int finalPrice = orderInfo.getTotalPrice() - this.getPromotionPrice();
-        StringBuilder promotionResult = new StringBuilder("-----------------------------------\n使用优惠:\n满");
-        promotionResult.append(promoThreshold).append("减").append(fixedPromoPrice).append("元，省")
-                .append(fixedPromoPrice).append("元\n");
-        promotionResult.append("-----------------------------------\n").append("总计：")
-                .append(finalPrice).append("元\n");
-        promotionResult.append("===================================");
-        return promotionResult.toString();
+        return "-----------------------------------\n使用优惠:\n满" + promoThreshold + "减" + fixedPromoPrice + "元，省" +
+                fixedPromoPrice + "元\n" +
+                "-----------------------------------\n" + "总计：" +
+                finalPrice + "元\n" +
+                "===================================";
     }
 }
-

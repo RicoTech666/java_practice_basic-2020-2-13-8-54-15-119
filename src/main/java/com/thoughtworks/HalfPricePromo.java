@@ -7,7 +7,7 @@ public class HalfPricePromo implements Promotions {
     private final int fixedPromoPrice = 6;
     private final int promoThreshold = 30;
 
-    public HalfPricePromo(OrderInfo orderInfo) {
+    HalfPricePromo(OrderInfo orderInfo) {
         this.orderInfo = orderInfo;
     }
 
@@ -27,10 +27,8 @@ public class HalfPricePromo implements Promotions {
     @Override
     public String getPromotionResult() {
         int finalPrice = orderInfo.getTotalPrice() - this.getPromotionPrice();
-        StringBuilder promotionResult = new StringBuilder("-----------------------------------\n使用优惠:\n指定菜品半价(");
-        promotionResult.append(orderInfo.getHalfPromoName()).append(")，省").append(getPromotionPrice()).append("元\n");
-        promotionResult.append("-----------------------------------\n").append("总计：").append(finalPrice).append("元\n");
-        promotionResult.append("===================================");
-        return promotionResult.toString();
+        return "-----------------------------------\n使用优惠:\n指定菜品半价(" + orderInfo.getHalfPromoName() + ")，省" + getPromotionPrice() + "元\n" +
+        "-----------------------------------\n" + "总计：" + finalPrice + "元\n" +
+        "===================================";
     }
 }

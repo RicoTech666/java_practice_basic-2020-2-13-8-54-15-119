@@ -11,11 +11,11 @@ public class PromoInfo {
     public PromoInfo() {
     }
 
-    public PromoInfo(OrderInfo orderInfo) {
+    PromoInfo(OrderInfo orderInfo) {
         this.orderInfo = orderInfo;
     }
 
-    public Promotions getPromotionTypeFromPromoInfo() {
+    Promotions getPromotionTypeFromPromoInfo() {
         List<Promotions> promotions = new ArrayList<>();
         promotions.add(new FixedPricePromo(orderInfo));
         promotions.add(new HalfPricePromo(orderInfo));
