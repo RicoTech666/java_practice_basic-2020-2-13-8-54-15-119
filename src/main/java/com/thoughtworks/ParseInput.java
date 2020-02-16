@@ -1,5 +1,7 @@
 package com.thoughtworks;
 
+import com.thoughtworks.interfaces.Promotions;
+
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -29,5 +31,9 @@ public class ParseInput {
             }
         }
         return new OrderInfo(orderedInfo);
+    }
+
+    public PromoInfo passOrderInfoToPromoInfo() {
+        return new PromoInfo(parseInputIntoOrderInfo());
     }
 }

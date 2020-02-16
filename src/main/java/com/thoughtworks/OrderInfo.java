@@ -14,6 +14,10 @@ public class OrderInfo {
         this.orderedDishes = orderedDishes;
     }
 
+    public Map<Dish, Integer> getOrderedDishes() {
+        return orderedDishes;
+    }
+
     private List<Integer> getEachTotalPrice() {
         List<Integer> eachTotalPriceList = new ArrayList<>();
         for (Dish dish : orderedDishes.keySet()) {
@@ -24,6 +28,20 @@ public class OrderInfo {
 
     public int getTotalPrice() {
         return getEachTotalPrice().stream().reduce(Integer::sum).orElse(0);
+    }
+
+    public int getHalfPromoAmount() {
+        List<String> halfPriceIds = DataProvider.getHalfDishIds();
+        int halfPricePromoAmount = 0;
+        for (Dish dish : orderedDishes.keySet()) {
+            String dishId = dish.getId();
+            for (String halfPriceId : halfPriceIds) {
+                if (dishId.equals(halfPriceId)) {
+                    halfPricePromoAmount += (int) dish.getPrice() / 2 * orderedDishes.get(dish);
+                }
+            }
+        }
+        return halfPricePromoAmount;
     }
 
     public String getBasicInfo() {
