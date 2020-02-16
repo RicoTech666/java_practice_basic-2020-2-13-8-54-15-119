@@ -2,8 +2,6 @@ package com.thoughtworks;
 
 import com.thoughtworks.interfaces.Promotions;
 
-import java.util.List;
-
 public class FixedPricePromo implements Promotions {
     private OrderInfo orderInfo;
     private final int fixedPromoPrice = 6;
