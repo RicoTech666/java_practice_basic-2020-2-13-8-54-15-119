@@ -10,7 +10,7 @@ public class FixedPricePromo implements Promotions {
     public FixedPricePromo() {
     }
 
-    public FixedPricePromo(OrderInfo orderInfo) {
+    FixedPricePromo(OrderInfo orderInfo) {
         this.orderInfo = orderInfo;
     }
 
@@ -28,6 +28,9 @@ public class FixedPricePromo implements Promotions {
 
     @Override
     public String getPromotionResult() {
-        return null;
+        StringBuilder promotionResult = new StringBuilder("-----------------------------------\n使用优惠:\n满");
+        promotionResult.append(promoThreshold).append("减").append(fixedPromoPrice).append("元，省").append(fixedPromoPrice).append("元");
+        return promotionResult.toString();
     }
 }
+
